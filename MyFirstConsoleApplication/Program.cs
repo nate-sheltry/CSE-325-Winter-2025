@@ -24,11 +24,13 @@ namespace MyFirstConsoleApplication
 
             double width, height, woodLength, glassArea;
             string widthString, heightString;
+
+
             
-            Console.Write("Width:");
+            Console.Write("Glass Width:");
             widthString = Console.ReadLine();
             width = double.Parse(widthString);
-            Console.Write("Height:");
+            Console.Write("Glass Height:");
             heightString = Console.ReadLine();
             height = double.Parse(heightString);
             woodLength = 2 * (width + height) * 3.25;
