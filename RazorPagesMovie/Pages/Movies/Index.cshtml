@@ -13,7 +13,7 @@
 
 <form>
     <p>
-        <select asp-formaction="MovieGenre" asp-asp-items="Model.Genres">
+        <select asp-for="MovieGenre" asp-items="Model.Genres">
             <option value="">All</option>
         </select>
         <label>Title: <input type="text" asp-for="SearchString"/></label>
