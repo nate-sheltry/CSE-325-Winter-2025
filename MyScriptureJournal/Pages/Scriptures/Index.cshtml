@@ -1,0 +1,73 @@
+﻿@page
+@model MyScriptureJournal.Pages.Scriptures.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p class="create-para">
+    <a asp-page="Create">Create New</a>
+</p>
+
+
+    <form class="filter-sort">
+        <p>
+            <select asp-for="EntryBook" asp-items="Model.Books">
+                <option value="">All</option>
+            </select>
+            <label>In Notes: <input type="text" asp-for="SearchString" /></label>
+            <input type="submit" value="Filter" />
+        </p>
+        <p>
+            <label>
+                Sort By:
+                <select asp-for="SortBy" asp-items="Model.SortBys" onchange="this.form.submit();">
+                </select>
+            </label>
+        </p>
+    </form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Range)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scripture[0].DateAdded)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Scripture) {
+        <tr class="entry">
+            <td>
+                @Html.DisplayFor(modelItem => item.Book)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Range)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td class="modify-entry">
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> <span class="entry-divider">|</span>
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> <span class="entry-divider">|</span>
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
