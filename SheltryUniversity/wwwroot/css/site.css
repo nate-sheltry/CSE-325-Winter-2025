@@ -133,3 +133,11 @@ body {
     bottom:15%;
     font-weight:bold;
 }
+
+.about-table th {
+    padding:.25em 1em;
+}
+
+.about-table td {
+    padding: .25em 1.25em;
+}
