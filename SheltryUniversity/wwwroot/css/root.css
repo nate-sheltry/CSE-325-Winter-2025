@@ -1,0 +1,10 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --main-font: "Outfit", sans-serif;
+    --header-font: "Lobster Two", sans-serif;
+    --background-color: #FEF9E1;
+    --secondary-color: #E5D0AC;
+    --highlight-color: #FF9D23;
+    --darklight-color: #C14600;
+}
